@@ -28,4 +28,12 @@ jobs:
         echo "No hay pruebas aún, pero el pipeline funciona"
 
     - name: Comprimir proyecto
-      run: zip -r crud_empleados.zip . -x "*.git*"
+      run: |
+        zip -r crud_empleados_build.zip . -x "*.git*" "*.venv*" "__pycache__/*"
+
+    - name: Subir artefacto ZIP
+      uses: actions/upload-artifact@v3
+      with:
+        name: crud_empleados_build.zip
+        path: crud_empleados_build.zip
+
