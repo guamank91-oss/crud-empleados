@@ -32,7 +32,7 @@ jobs:
         zip -r crud_empleados_build.zip . -x "*.git*" "*.venv*" "__pycache__/*"
 
     - name: Subir artefacto ZIP
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: crud_empleados_build.zip
         path: crud_empleados_build.zip
